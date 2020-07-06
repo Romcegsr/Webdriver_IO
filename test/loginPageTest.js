@@ -1,9 +1,6 @@
 const loginPage = require("../pages/loginPage");
-const productPage = require("../pages/productsPage");
-const { assert } = require("chai");
 const productsPage = require("../pages/productsPage");
-const { productPageLabel } = require("../pages/productsPage");
-
+const { assert } = require("chai");
 
 describe("E2E scenario", () =>{
 
@@ -23,9 +20,9 @@ describe("E2E scenario", () =>{
         loginPage.clickOnLogin();
         
     });
-    it("In the product page", () =>{
-        console.log(productPage.productPageLabel.getText());
-        assert.equal('Products',productPage.productPageLabel.getText());
+    it("Verify if in the product page", () =>{
+        console.log(productsPage.productPageLabel.getText());
+        assert.equal('Products',productsPage.productPageLabel.getText());
        
     });
 
@@ -40,10 +37,10 @@ describe("E2E scenario", () =>{
     //    let list = productPage.productChild;
     //    console.log("Nested divs are :", list.length);
 
-    productPage.clickOnLowestItem1();
-    productPage.clickOnLowestItem2();
-
-       
-    })
+    productsPage.clickOnLowestItem1();
+    assert.equal('REMOVE',productsPage.lowestPricedItem1.getText());
+    productsPage.clickOnLowestItem2();
+    assert.equal('REMOVE',productsPage.lowestPricedItem2.getText());    
+    });
 
 });
