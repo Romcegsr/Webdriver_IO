@@ -1,2 +1,2 @@
-# Webdriver_IO_Practice
-Practice Framework using Javascript, WebdriverIO, Mocha and Chai
+# Automation Task for Tray.io
+E2E Framework using Javascript, WebdriverIO, Mocha and Chai
