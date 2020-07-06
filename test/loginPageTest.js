@@ -5,7 +5,7 @@ const productsPage = require("../pages/productsPage");
 const { productPageLabel } = require("../pages/productsPage");
 
 
-describe("Login by providing username and password", () =>{
+describe("E2E scenario", () =>{
 
     it("Enter Username",() => {
         browser.url('/')
@@ -35,14 +35,14 @@ describe("Login by providing username and password", () =>{
         
     });
 
-    it("Add product with lowest value to cart",()=>{
+    it("Add two products with lowest value to cart",()=>{
         //browser.findElement('//*[@id="inventory_container"]/div/div[1]/div[3]/div','$49.99');
     //    let list = productPage.productChild;
     //    console.log("Nested divs are :", list.length);
 
-    productPage.lowestPricedItem1.getValue();
-    
-        browser.pause(3000);
+    productPage.clickOnLowestItem1();
+    productPage.clickOnLowestItem2();
+
        
     })
 
