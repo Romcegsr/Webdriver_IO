@@ -4,8 +4,6 @@ const shopCartPage = require("../pages/shoppingCartPage");
 const informPage = require("../pages/checkOutPage");
 const { assert } = require("chai");
 
-
-
 describe("E2E scenario", () =>{
 
     it("Enter Username",() => {
