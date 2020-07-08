@@ -1,6 +1,9 @@
 const loginPage = require("../pages/loginPage");
 const productsPage = require("../pages/productsPage");
+const shopCartPage = require("../pages/shoppingCart");
 const { assert } = require("chai");
+
+
 
 describe("E2E scenario", () =>{
 
@@ -33,14 +36,26 @@ describe("E2E scenario", () =>{
     });
 
     it("Add two products with lowest value to cart",()=>{
-        //browser.findElement('//*[@id="inventory_container"]/div/div[1]/div[3]/div','$49.99');
-    //    let list = productPage.productChild;
-    //    console.log("Nested divs are :", list.length);
-
+     
+    assert.exists('$7.99', productsPage.lowestPrice1.getText());
     productsPage.clickOnLowestItem1();
     assert.equal('REMOVE',productsPage.lowestPricedItem1.getText());
+   
+     // Verify the price of the second lowest priced item is $9.99 and then add the item to cart 
+    assert.exists('$9.99', productsPage.lowestPrice1.getText());
     productsPage.clickOnLowestItem2();
     assert.equal('REMOVE',productsPage.lowestPricedItem2.getText());    
+    });
+
+    it("Open the shopping cart", ()=>{
+    //Open the basket and verify if 2 items are added to it
+    
+    productsPage.clickOnShoppingCart();
+    //Let's use browser to get div text
+    browser.pause(2000);
+    console.log(shopCartPage.itemsInCart);
+
+
     });
 
 });
