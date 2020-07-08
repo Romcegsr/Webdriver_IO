@@ -1,6 +1,7 @@
 const loginPage = require("../pages/loginPage");
 const productsPage = require("../pages/productsPage");
-const shopCartPage = require("../pages/shoppingCart");
+const shopCartPage = require("../pages/shoppingCartPage");
+const informPage = require("../pages/checkOutPage");
 const { assert } = require("chai");
 
 
@@ -49,13 +50,25 @@ describe("E2E scenario", () =>{
 
     it("Open the shopping cart", ()=>{
     //Open the basket and verify if 2 items are added to it
-    
     productsPage.clickOnShoppingCart();
-    //Let's use browser to get div text
+    //Check if shopping cart has 2 items
+    assert.equal('2',shopCartPage.itemsInCart.getText());
+    });
+
+    it("Remove the cheapest item from the cart",()=>{
+    //Remove the cheapest item from the cart    
+    shopCartPage.clickOnRemoveCheapestItem();
     browser.pause(2000);
-    console.log(shopCartPage.itemsInCart);
+    //Only One item in the cart remaning
+    assert.equal('1',shopCartPage.itemsInCart.getText());   
+    });
 
+    it("Click on the checkout button",()=>{
+     shopCartPage.clickOnCheckout(); 
+    });
 
+    it("Verify if the page Checkout: Your Information", ()=>{
+        assert.exists('Your Information',informPage.pageHeader.getText());
     });
 
 });
