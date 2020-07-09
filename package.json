@@ -1,10 +1,13 @@
 {
-  "name": "webdriver_io_practice",
+  "name": "@romcegsr/e2e",
   "version": "1.0.0",
   "description": "My WebdriverIO project",
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/.bin/wdio ./wdio.conf.js"
+  },
+  "repository": {
+    "url":"git://github.com/Romcegsr/Webdriver_IO.git"
   },
   "author": "Rohini Rao",
   "license": "ISC",
