@@ -1,4 +1,3 @@
-# Automation Task for Tray.io
 E2E Automation Framework using Javascript, WebdriverIO, Mocha and Chai
 
 Steps to install and run the automation test:
@@ -9,7 +8,7 @@ Step 1 : Clone the repo on to your local system or Download the tgz "Eg:e2e-1.0.
 
 Step 2 : Once you have the code/repo, go to folder with package.json(eg:/Users/AB/MyProjects/TestPackage/package) and execute `npm install`
 
-Step 3 : Please ignore the npm deprecation message for now. But install chai using `npm install chai`
+Step 3 : Please ignore the npm deprecation message for now. But please install chai using `npm install chai`
 
 Step 4 : To run the test use `npm test -- --spec ../test/E2E.js`
 
