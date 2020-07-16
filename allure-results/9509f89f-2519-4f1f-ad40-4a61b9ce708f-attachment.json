@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "#inventory_container > div > div:nth-child(6) > div.pricebar > button"
-}
