@@ -7,25 +7,25 @@ const { assert } = require("chai");
 describe("E2E scenario", () =>{
 
     it("Enter Username",() => {
-        browser.url('/')
-        loginPage.enterUserName('standard_user');
-        assert.equal('standard_user',loginPage.userName.getValue());
+             browser.url('/')
+            loginPage.enterUserName('standard_user');
+            assert.equal('standard_user',loginPage.userName.getValue());
 
     });
 
     it("Enter Password", () =>{
-        loginPage.enterUserPassword('secret_sauce');
-        assert.equal('secret_sauce',loginPage.userPassword.getValue());
+            loginPage.enterUserPassword('secret_sauce');
+            assert.equal('secret_sauce',loginPage.userPassword.getValue());
     });
 
     it("Click login button", ()=>{
-        loginPage.clickOnLogin();
+            loginPage.clickOnLogin();
         
     });
 
     it("Verify if in the product page", () =>{
-        console.log(productsPage.productPageLabel.getText());
-        assert.equal('Products',productsPage.productPageLabel.getText());
+            console.log(productsPage.productPageLabel.getText());
+            assert.equal('Products',productsPage.productPageLabel.getText());
        
     });
 
@@ -53,25 +53,25 @@ describe("E2E scenario", () =>{
     });
 
     it("Open the shopping cart", ()=>{
-    //Open the basket and verify if 2 items are added to it
-    productsPage.clickOnShoppingCart();
-    //Check if shopping cart has 2 items
-    assert.equal('2',shopCartPage.itemsInCart.getText());
+            //Open the basket and verify if 2 items are added to it
+            productsPage.clickOnShoppingCart();
+            //Check if shopping cart has 2 items
+            assert.equal('2',shopCartPage.itemsInCart.getText());
     });
 
     it("Remove the cheapest item from the cart",()=>{
-    //Remove the cheapest item from the cart    
-    shopCartPage.clickOnRemoveCheapestItem();
-    //Only One item in the cart remaning
-    assert.equal('1',shopCartPage.itemsInCart.getText());   
+            //Remove the cheapest item from the cart    
+            shopCartPage.clickOnRemoveCheapestItem();
+            //Only One item in the cart remaning
+            assert.equal('1',shopCartPage.itemsInCart.getText());   
     });
 
     it("Click on the checkout button",()=>{
-     shopCartPage.clickOnCheckout(); 
+            shopCartPage.clickOnCheckout(); 
     });
 
     it("Verify if the page has Checkout: Your Information", ()=>{
-        assert.exists('Your Information',informPage.pageHeader.getText());
+            assert.exists('Your Information',informPage.pageHeader.getText());
     });
 
 });
