@@ -30,23 +30,26 @@ describe("E2E scenario", () =>{
     });
 
     it("Sort the products from High to Low", ()=>{
-        productsPage.productSortContainer.selectByVisibleText('Price (high to low)');
-        //assert.equal('Price (high to low)', productPage.inventorySort.getText('option:checked'));
+            productsPage.productSortContainer.selectByVisibleText('Price (high to low)');
+            //Better option to verify the dropdown option selected is correct
+            //assert.exists('(high to low)', productsPage.productSortContainer.getText('option:checked'));
         
     });
 
     it("Add two products with lowest value to cart",()=>{
-    // Verify the price of the lowest priced item is $7.99 and then add the item to cart
-    assert.exists('$7.99', productsPage.lowestPrice1.getText());
-    productsPage.clickOnLowestItem1();
-    //Verify if the product has been already added to cart
-    assert.equal('REMOVE',productsPage.lowestPricedItem1.getText());
+            // Verify the price of the lowest priced item is $7.99 and then add the item to cart
+            assert.exists('$7.99', productsPage.lowestPrice1.getText());
+            productsPage.clickOnLowestItem1();
+
+            //Verify if the product has been already added to cart
+            assert.equal('REMOVE',productsPage.lowestPricedItem1.getText());
    
-     // Verify the price of the second lowest priced item is $9.99 and then add the item to cart 
-    assert.exists('$9.99', productsPage.lowestPrice1.getText());
-    productsPage.clickOnLowestItem2();
-    //Verify if the product has been already added to cart
-    assert.equal('REMOVE',productsPage.lowestPricedItem2.getText());    
+             // Verify the price of the second lowest priced item is $9.99 and then add the item to cart 
+            assert.exists('$9.99', productsPage.lowestPrice1.getText());
+            productsPage.clickOnLowestItem2();
+
+            //Verify if the product has been already added to cart
+            assert.equal('REMOVE',productsPage.lowestPricedItem2.getText());    
     });
 
     it("Open the shopping cart", ()=>{
@@ -67,7 +70,7 @@ describe("E2E scenario", () =>{
      shopCartPage.clickOnCheckout(); 
     });
 
-    it("Verify if the page Checkout: Your Information", ()=>{
+    it("Verify if the page has Checkout: Your Information", ()=>{
         assert.exists('Your Information',informPage.pageHeader.getText());
     });
 
