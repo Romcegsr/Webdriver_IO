@@ -1,4 +1,4 @@
-class ProductPage {
+class inventoryPage {
     // Selectors and Methods for page :https://www.saucedemo.com/inventory.html
 
     get productPageLabel() { return $('#inventory_filter_container > div'); }
@@ -34,4 +34,4 @@ class ProductPage {
  
 }
 
-module.exports = new ProductPage();
+module.exports = new inventoryPage();
