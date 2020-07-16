@@ -1,4 +1,4 @@
-E2E Automation Framework using Javascript, WebdriverIO, Mocha and Chai
+Automation Framework using Javascript, WebdriverIO, Mocha and Chai
 
 Steps to install and run the automation test:
 
@@ -13,8 +13,3 @@ Step 3 : Please ignore the npm deprecation message for now. But please install c
 Step 4 : To run the test use `npm test -- --spec ../test/E2E.js`
 
 By default Chrome browser will be used to run the test, to run against different browser(Eg:Firefox) please update `wdio.conf.js`
-
-
-
-
-
